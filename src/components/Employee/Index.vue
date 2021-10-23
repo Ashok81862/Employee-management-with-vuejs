@@ -25,7 +25,8 @@
                     <tr v-for="employee in employees" :key="employee.id">
                         <th scope="row">{{ employee.id }}</th>
                         <td>{{ employee.name }}</td>
-                        <td>{{ employee.department.title }}</td>
+                        <td v-if="employee.departmentId">{{ employee.department.title }}</td>
+                        <td v-else>Free Agent</td>
                         <td>
                             <a :href="'/employees/'+employee.id" class="btn btn-primary btn-sm "><i class="fa fa-pen me-2"></i>Edit</a>
 

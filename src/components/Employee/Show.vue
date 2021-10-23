@@ -23,7 +23,8 @@
                     </tr>
                     <tr>
                         <td>Department</td>
-                        <td>{{ currentEmployee.department.title }}</td>
+                        <td v-if="currentEmployee.departmentId">{{ currentEmployee.department.title }}</td>
+                        <td v-else>Free Agent</td>
                     </tr>
                     <tr>
                         <td>Email</td>
